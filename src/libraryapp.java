@@ -43,7 +43,6 @@ public  class libraryapp {
     }
 
     private void PrintMenu() {
-        System.out.println("***************************");
         System.out.println("Welcome to Library App");
         System.out.println("1.Print all books");
         System.out.println("2.Add new book");
@@ -52,7 +51,6 @@ public  class libraryapp {
         System.out.println("5.Return a book");
         System.out.println("6.Delete a book by id");
         System.out.println("7.Quit");
-        System.out.println("****************************");
     }
 
     private void PrintAllBooks() {
