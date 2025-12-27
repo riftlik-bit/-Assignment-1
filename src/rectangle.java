@@ -1,55 +1,60 @@
 public class Rectangle {
 
-    // Fields
     private double width;
     private double height;
     private int id;
     private static int idGen = 1;
 
-    public Rectangle(){
-        this.width = 1.0;
-        this.height = 1.0;
-        this.id = idGen++;
-    }
-    public Rectangle(double width,double height){
-        this();
-        setHeight(height);
-        setWidth(width);
+    public Rectangle() {
+        width = 1.0;
+        height = 1.0;
+        id = idGen++;
     }
 
-    public double getHeight() {
-        return height;
+    public Rectangle(double width, double height) {
+        this(); // call default constructor
+        setWidth(width);
+        setHeight(height);
     }
+
+   
     public double getWidth() {
         return width;
     }
-
-
-    public void setHeight(double height) {
-        if(height < 0.0) {
-            throw new IllegalArgumentException("height < 0");
-        }
-        else {
-            this.height = height;}
-    }
-
-
+ 
     public void setWidth(double width) {
-        if(width < 0.0) {
-            throw new IllegalArgumentException("width < 0");
+        if (width <= 0) {
+            throw new IllegalArgumentException("Width must be greater than 0");
         }
-        else {
-            this.width = width;}
+        this.width = width;
     }
+
+   
+    public double getHeight() {
+        return height;
+    }
+    public void setHeight(double height) {
+        if (height <= 0) {
+            throw new IllegalArgumentException("Height must be greater than 0");
+        }
+        this.height = height;
+    }
+
+   
     public double area() {
-        return width*height;
+        return width * height;
     }
+
+  
     public double perimeter() {
-        return 2*(width+height);
+        return 2 * (width + height);
     }
 
-
+ 
+   
     public String toString() {
-        return "id= " + id + " " +  width+"*"+height;
+        return "Rectangle ID: " + id +
+               ", width = " + width +
+               ", height = " + height;
     }
 }
