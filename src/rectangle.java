@@ -36,7 +36,7 @@ public class Rectangle {
 
     public void setWidth(double width) {
         if(width < 0.0) {
-            throw new IllegalArgumentException("height < 0");
+            throw new IllegalArgumentException("width < 0");
         }
         else {
             this.width = width;}
